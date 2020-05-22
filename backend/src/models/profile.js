@@ -18,7 +18,7 @@ const profileSchema = new mongoose.Schema({
     }],
     avatar : {
         type: Buffer,
-        default: fs.readFileSync('../public/img/musician.b9e6e5fb.jpg')
+        default: fs.readFileSync('./public/img/musician.b9e6e5fb.jpg')
     },
     owner: {
         type: mongoose.Schema.Types.ObjectId,
