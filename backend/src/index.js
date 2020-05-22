@@ -14,25 +14,9 @@ const conversationRouter = require('./routers/conversation')
 const cors = require('cors')
 const app = express()
 
-//Socket IO
-const server = require('http').Server(app)
-const io = require('socket.io')(server)
-
 // Mongoose
 require('./db/mongoose')
 
-const port = process.env.PORT 
-
-app.use(cors())
-app.options('*', cors())
-app.use(express.json())
-app.use(userRouter)
-app.use(profileRouter)
-app.use(songRouter)
-app.use(likeRouter)
-app.use(commentRouter)
-app.use(messageRouter)
-app.use(conversationRouter)
 if(process.env.NODE_ENV === 'production') {
     app.use(express.static(__dirname + '/public/'))
 
@@ -50,8 +34,18 @@ if(process.env.NODE_ENV === 'production') {
 }
 
 
+const port = process.env.PORT 
 
-
+app.use(cors())
+app.options('*', cors())
+app.use(express.json())
+app.use(userRouter)
+app.use(profileRouter)
+app.use(songRouter)
+app.use(likeRouter)
+app.use(commentRouter)
+app.use(messageRouter)
+app.use(conversationRouter)
 
 
 server.listen(port, () => {
