@@ -22,7 +22,11 @@ require('./db/mongoose')
 // if(process.env.NODE_ENV === 'production') {
     app.use(express.static(__dirname + '../public/'))
     
-    app.use(history())
+    app.use(history({
+        verbose: true,
+        htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'],
+        disableDotRule: true
+    }))
   
 
 // } else {
