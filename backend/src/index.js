@@ -23,10 +23,7 @@ if(process.env.NODE_ENV === 'production') {
     app.use(express.static(__dirname + '/../public/'))
 
     
-    app.use(history({
-        disableDotRule: true,
-        verbose: true
-    }))
+    app.use(history())
     
     app.get('/.*/', (req, res) => { 
         res.sendFile(__dirname + '/../public/index.html'); 
