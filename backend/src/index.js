@@ -34,14 +34,14 @@ app.use(commentRouter)
 app.use(messageRouter)
 app.use(conversationRouter)
 if(process.env.NODE_ENV === 'production') {
-    app.use(express.static(__dirname, '/public'))
+    app.use(express.static(__dirname + '/public/'))
 
     app.get('/.*/', (req, res) => { 
-        res.sendFile(__dirname, '/public/index.html'); 
+        res.sendFile(__dirname + '/public/index.html'); 
     });
 
 } else {
-    app.use(express.static(path.join(__dirname, '../frontend/public')))
+    app.use(express.static(path.join(__dirname,'../frontend/public')))
     app.get('/.*/', (req, res) => { 
         res.sendFile(path.join(__dirname, '../frontend/public/index.html')); 
     });
