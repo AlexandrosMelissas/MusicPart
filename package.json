@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "env-cmd -f ./src/config/dev.env nodemon src/index.js",
+    "start": "node backend/src/index.js",
+    "dev": "env-cmd -f ./src/config/dev.env nodemon backend/src/index.js",
     "mongo": "C:/Users/Alex/mongodb/bin/mongod.exe --dbpath=C:/Users/Alex/mongodb-data"
   },
   "author": "",
