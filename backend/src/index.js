@@ -33,7 +33,6 @@ if(process.env.NODE_ENV === 'production') {
 
 }
 
-
 const port = process.env.PORT 
 
 app.use(cors())
@@ -47,7 +46,6 @@ app.use(commentRouter)
 app.use(messageRouter)
 app.use(conversationRouter)
 
-
-server.listen(port, () => {
+app.listen(port, () => {
     console.log(`Server is up on : ${port}`)
 })
