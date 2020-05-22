@@ -21,6 +21,7 @@
     "validator": "^13.0.0"
   },
   "devDependencies": {
+    "connect-history-api-fallback": "^1.6.0",
     "env-cmd": "^10.1.0",
     "nodemon": "^2.0.3"
   }

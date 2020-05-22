@@ -13,16 +13,22 @@ const conversationRouter = require('./routers/conversation')
 //Cors for localhost
 const cors = require('cors')
 const app = express()
+const history = require('connect-history-api-fallback')
 
 // Mongoose
 require('./db/mongoose')
 
 if(process.env.NODE_ENV === 'production') {
     app.use(express.static(__dirname + '/public/'))
+    
+    app.use(history({
+        disableDotRule: true,
+        verbose: true
+       }))
 
-    app.get('/.*/', (req, res) => { 
-        res.sendFile(__dirname + '/public/index.html'); 
-    });
+    // app.get('/.*/', (req, res) => { 
+    //     res.sendFile(__dirname + '/public/index.html'); 
+    // });
 
 } else {
     app.use(express.static(path.join(__dirname,'../frontend/public')))
