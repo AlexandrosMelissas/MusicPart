@@ -19,24 +19,23 @@ const history = require('connect-history-api-fallback')
 require('./db/mongoose')
 
 
-if(process.env.NODE_ENV === 'production') {
-    app.use(express.static(__dirname + '/../public/'))
-
+// if(process.env.NODE_ENV === 'production') {
+    app.use(express.static(__dirname + '../public/'))
     
     app.use(history())
     
-    app.get('/.*/', (req, res) => { 
-        res.sendFile(__dirname + '/../public/index.html'); 
+    app.get('/', (req, res) => { 
+        res.sendFile(__dirname + '../public/index.html'); 
     });
 
-} else {
-    app.use(express.static(path.join(__dirname,'../frontend/public')))
-    app.get('/.*/', (req, res) => { 
-        res.sendFile(path.join(__dirname, '../frontend/public/index.html')); 
-    });
+// } else {
+//     app.use(express.static(path.join(__dirname,'../frontend/public')))
+//     app.get('/.*/', (req, res) => { 
+//         res.sendFile(path.join(__dirname, '../frontend/public/index.html')); 
+//     });
     
 
-}
+// }
 
 const port = process.env.PORT 
 
