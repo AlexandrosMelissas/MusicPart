@@ -23,7 +23,7 @@ const songSchema = new mongoose.Schema({
     },
     image : {
         type: Buffer,
-        default: fs.readFileSync('/public/img/background.f925f5c9.jpg')
+        default: fs.readFileSync('../public/img/background.f925f5c9.jpg')
     },
     file: {
         type: Buffer,
