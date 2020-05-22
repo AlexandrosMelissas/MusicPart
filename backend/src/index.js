@@ -20,7 +20,8 @@ require('./db/mongoose')
   
 app.use(history({
     disableDotRule: true,
-    verbose: true
+    verbose: true,
+    htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'] 
 }))
 
 if(process.env.NODE_ENV === 'production') {
