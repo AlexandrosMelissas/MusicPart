@@ -40,7 +40,6 @@ router.get('/api/song/:id/comment', async (req,res) => {
         .skip(parseInt(req.query.skip))
         .sort({'createdAt': -1})
         .populate({path: 'owner',populate: {path:'profile',select: '_id'}})
- 
         .exec((err,docs) => {
            res.send({
                comments : docs,
