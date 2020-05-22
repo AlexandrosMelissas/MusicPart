@@ -27,6 +27,10 @@ require('./db/mongoose')
         htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'],
         disableDotRule: true
     }))
+
+    app.get('/', function (req, res) {
+        res.render(path.join(__dirname + '../public/index.html'))
+      })
   
 
 // } else {
