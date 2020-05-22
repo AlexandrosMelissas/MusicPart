@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const fs = require('fs')
+const path = require('path')
 
 const profileSchema = new mongoose.Schema({
     age : {
@@ -18,8 +19,7 @@ const profileSchema = new mongoose.Schema({
     }],
     avatar : {
         type: Buffer,
-        default: ''
-        // default: fs.readFileSync('../public/img/musician.b9e6e5fb.jpg')
+        default: fs.readFileSync(path.resolve((__dirname), '../../public/img/avatar.jpg'))
     },
     owner: {
         type: mongoose.Schema.Types.ObjectId,

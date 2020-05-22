@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const fs = require('fs')
+const path = require('path')
 
 const songSchema = new mongoose.Schema({
     title: {
@@ -23,8 +24,7 @@ const songSchema = new mongoose.Schema({
     },
     image : {
         type: Buffer,
-        default: ''
-        // default: fs.readFileSync('./public/img/background.f925f5c9.jpg')
+        default: fs.readFileSync(path.resolve((__dirname), '../../public/img/song.jpg'))
     },
     file: {
         type: Buffer,
