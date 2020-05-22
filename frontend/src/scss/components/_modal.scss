@@ -1,0 +1,49 @@
+.modal {
+    
+    &_container {
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba($color-black,.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        display: none;
+    }
+
+    &_box {
+        width: 50%;
+        padding: 3rem;
+        background-color: $color-white;
+        @include box-shadow-small;
+        border-radius: .5rem;
+
+        display: flex;
+        position: relative;
+
+        &-send {
+            display: none;
+        }
+
+        &-edit {
+            width: 35%;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            display: none;
+        }
+
+        &-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 3rem;
+            color: $color-black;
+            cursor: pointer;    
+        }
+    }
+
+}

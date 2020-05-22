@@ -1,0 +1,64 @@
+.home {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 2rem;
+    margin-top: 5rem;
+    padding: 0 3rem;
+}
+
+.song {
+    text-align: center;
+    // border: 1px solid $color-gray-dark;
+    border-radius: .6rem;
+    padding-bottom: 2rem;
+    @include box-shadow-medium;
+    cursor: pointer;
+    transition: all .3s;
+    
+    &:nth-child(n + 5) {
+        margin-top: 3rem;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    &_image {
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+        border-top-left-radius: .3rem;
+        border-top-right-radius: .3rem;
+    }
+
+    &_title {
+        font-size: 2.5rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        font-weight: 100;
+        color: $color-gray-darker;
+    }
+
+    &_genre {
+        font-weight: 100;
+        color: $color-gray-dark;
+        font-size: 2rem;
+    }
+
+
+    &_likes {
+        margin-top: 2rem;
+        &-number {
+            font-size: 2rem;
+            margin-top: .5rem;
+            margin-left: .5rem;
+        }
+        &-icon {
+            margin-bottom: .5rem;
+            vertical-align: middle;
+            color: $color-gray-dark;
+
+        }
+    }
+
+}

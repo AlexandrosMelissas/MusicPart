@@ -1,0 +1,40 @@
+@mixin  flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin  block-center {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin  text-shadow-small {
+    text-shadow: 0 1rem 2rem rgba($color-black,.15);
+}
+
+@mixin  text-shadow-medium {
+    text-shadow: 0 1.5rem 3rem rgba($color-black,.3);
+}
+
+@mixin  text-shadow-large {
+    text-shadow: 0 2rem 4rem rgba($color-black,.4);
+}
+
+@mixin  box-shadow-small {
+    box-shadow: 0 1rem 2rem rgba($color-black,.15);
+}
+
+@mixin  box-shadow-medium {
+    box-shadow: 0 1.5rem 3rem rgba($color-black,.3);
+}
+
+@mixin  box-shadow-large {
+    box-shadow: 0 2rem 4rem rgba($color-black,.4);
+}
+
+
+

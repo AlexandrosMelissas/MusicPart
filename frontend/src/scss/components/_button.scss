@@ -1,0 +1,45 @@
+.btn {
+    display: block;
+    text-align: center;
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    @include box-shadow-small;
+    cursor: pointer;
+    border: none;
+    transition: all .15s;
+
+    &_dark {
+        background: $color-gray-dark;
+        color: $color-white;
+    }
+
+    &_animated {
+
+        &:hover {
+            transform: translateY(-.3rem);
+            @include box-shadow-medium;
+
+        }
+
+        &:active,&:visited {
+            transform: translateY(-.1rem);
+        }
+    }
+
+    &-primary {
+        display: block;
+        text-align: center;
+        background-color: $color-secondary;
+        padding: 1.5rem 3rem;
+        color: $color-white;
+        margin-top: 3rem;
+        width: 30%;
+        font-size: 2rem;
+        cursor: pointer;
+        transform: translate(0,0);
+        transition: all .3s;
+        text-decoration: none;
+
+    }
+}

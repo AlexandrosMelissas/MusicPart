@@ -1,0 +1,69 @@
+.connect-section {
+    text-align: center;
+    position: relative;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "container-red container-red image-red"
+        "image-gray container-gray container-gray";
+    grid-template-rows: repeat(2, minmax(20rem, 35rem));
+    margin-top: 10rem;
+}
+
+.triangle-1 {
+    padding: 10rem 0 ;
+    background-color: $color-secondary;
+    grid-area: container-red;
+  &_heading {
+        width: 60%;
+        margin: 0 auto;
+        text-align: left;
+         }
+  &_title {
+      font-size: 5rem;
+      color: $color-white;
+      margin-bottom: 4rem;
+  }
+
+  &_text {
+      font-size: 2.5rem;
+      color: #eeeded;
+      line-height: 2.5rem;
+  }
+}
+
+.triangle-2 {
+    padding: 5rem 0;
+    background-color: $color-gray-dark;
+    grid-area: container-gray;
+    &_heading {
+        width: 60%;
+        text-align: left;
+        margin: 5rem auto;
+
+         }
+  &_title {
+      font-size: 5rem;
+      color: $color-white;
+      margin-bottom: 3rem;
+  }
+
+  &_text {
+      font-size: 2.5rem;
+      color: $color-white-soft;
+      line-height: 2.5rem;
+  }
+}
+
+.middle_text {
+
+    font-size: 6rem;
+    transform: rotate(-15deg);
+    color: $color-gray-dark;
+
+    
+
+}
