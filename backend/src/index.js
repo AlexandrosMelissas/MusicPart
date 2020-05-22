@@ -20,18 +20,17 @@ require('./db/mongoose')
 
 
 if(process.env.NODE_ENV === 'production') {
-    app.use(express.static(__dirname + '../public/'))
+    app.use(express.static(__dirname + '/../public/'))
+
     
     app.use(history({
-        verbose: true,
-        htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'],
-        disableDotRule: true
+        disableDotRule: true,
+        verbose: true
     }))
-
-    app.get('/', function (req, res) {
-        res.sendFile(path.join(__dirname, '../public/index.html'))
-      })
-  
+    
+    app.get('/.*/', (req, res) => { 
+        res.sendFile(__dirname + '/../public/index.html'); 
+    });
 
 } else {
     app.use(express.static(path.join(__dirname,'../frontend/public')))
