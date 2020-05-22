@@ -3,3 +3,4 @@ config
 .env.development
 frontend
 .assets
+public
