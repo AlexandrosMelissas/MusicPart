@@ -33,16 +33,24 @@ app.use(likeRouter)
 app.use(commentRouter)
 app.use(messageRouter)
 app.use(conversationRouter)
-app.use(express.static(path.join(__dirname, '../frontend/public')))
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '/public')))
 
-app.get('/', (req, res) => { 
-    res.sendFile(path.join(__dirname, '../frontend/public/index.html')); 
-});
+    app.get('/.*/', (req, res) => { 
+        res.sendFile(path.join(__dirname, '/public/index.html')); 
+    });
+
+} else {
+    app.use(express.static(path.join(__dirname, '../frontend/public')))
+    app.get('/.*/', (req, res) => { 
+        res.sendFile(path.join(__dirname, '../frontend/public/index.html')); 
+    });
+    
+
+}
 
 
-app.get('/.*/', (req, res) => { 
-    res.sendFile(path.join(__dirname, '../frontend/public/index.html')); 
-});
+
 
 
 
