@@ -17,19 +17,19 @@ const history = require('connect-history-api-fallback')
 
 // Mongoose
 require('./db/mongoose')
-
+  
+app.use(history({
+    disableDotRule: true,
+    verbose: true
+}))
 
 if(process.env.NODE_ENV === 'production') {
-    app.use(express.static(__dirname + '../public/'))
+    app.use(express.static(__dirname + '/../public/'))
 
-    
-    app.use(history({
-        disableDotRule: true,
-        verbose: true
-    }))
+  
     
     app.get('/.*/', (req, res) => { 
-        res.sendFile(__dirname + '../public/index.html'); 
+        res.sendFile(__dirname + '/../public/index.html'); 
     });
 
 } else {
