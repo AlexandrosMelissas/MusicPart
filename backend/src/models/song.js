@@ -24,7 +24,7 @@ const songSchema = new mongoose.Schema({
     },
     image : {
         type: Buffer,
-        default: fs.readFileSync(path.resolve((__dirname), '../../public/img/song.jpg'))
+        default: fs.readFileSync(path.resolve((__dirname), '../../public/img-backend/song.jpg'))
     },
     file: {
         type: Buffer,

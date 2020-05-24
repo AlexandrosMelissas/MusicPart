@@ -19,7 +19,7 @@ const profileSchema = new mongoose.Schema({
     }],
     avatar : {
         type: Buffer,
-        default: fs.readFileSync(path.resolve((__dirname), '../../public/img/avatar.jpg'))
+        default: fs.readFileSync(path.resolve((__dirname), '../../public/img-backend/avatar.jpg'))
     },
     owner: {
         type: mongoose.Schema.Types.ObjectId,

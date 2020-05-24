@@ -2,11 +2,14 @@ const express = require('express')
 const router = new express.Router()
 const auth = require('../middleware/auth')
 const Song = require('../models/song')
+const path = require('path')
 const Profile = require('../models/profile')
 const multer = require('multer')
 const Comment = require('../models/comment')
 
-const upload1 = multer({
+
+
+const uploadSong = multer({
     limits: {
         fileSize: 7000000
     },
@@ -31,7 +34,9 @@ const upload2 = multer({
 })
 
 
-router.post('/api/song', auth, upload1.single('upload'), async (req,res) => {
+
+
+router.post('/api/song', auth, uploadSong.single('upload'), async (req,res) => {
       var body = JSON.parse(req.body.song)
       body = {
           ...body,
@@ -46,7 +51,7 @@ router.post('/api/song', auth, upload1.single('upload'), async (req,res) => {
 })
 
 
-router.post('/api/song/:id/image', auth, upload2.single('upload'), async (req,res) => {
+router.post('/api/song/:id/image', upload2.single('upload'), async (req,res) => {
 
     try {
         const song = await Song.findById(req.params.id)
@@ -63,6 +68,7 @@ router.post('/api/song/:id/image', auth, upload2.single('upload'), async (req,re
 
     } catch (error) {
 
+        res.status(400).send({error:error.message})
 
     }
 })
