@@ -1,0 +1,23 @@
+.search {
+
+    &_container {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    &_input {
+        width: 30%;
+        font-size: 1.5rem;
+        padding: 1rem 1rem;
+        color: $color-gray-dark;
+        border: none;
+        border-bottom: 2px solid $color-gray-dark;
+
+        &::-ms-input-placeholder {
+            color: inherit;
+        }
+    }
+  
+
+
+}

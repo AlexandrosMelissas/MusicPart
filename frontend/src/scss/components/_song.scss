@@ -1,0 +1,146 @@
+.song {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &_container {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr 1fr;
+        margin-top: 5rem;
+        width: 80%;
+        background-color: $color-white;
+        @include box-shadow-large;
+        position: relative;
+    }
+
+    &_info {
+        width: 100%;
+        background-color: rgba($color-gray-dark,.8);
+        padding: 4rem 3rem ;
+        color: $color-white;
+        display: flex;
+        flex-direction: column;
+        
+        &-author {
+            padding: 1rem 2rem;
+            background-color: rgba($color-black,.6);
+            border-radius: .3rem;
+            margin-bottom: 1rem;
+            align-self: center;
+        }
+
+        &-title {
+            padding: 1rem 2rem;
+            background-color: rgba($color-black,.6);
+            border-radius: .3rem;
+            margin-bottom: 1rem;
+            align-self: center;
+        }
+
+        &-genre {
+            padding: 1rem 2rem;
+            background-color: rgba($color-black,.6);
+            border-radius: .3rem;
+            align-self: center;
+        }
+    }
+        
+    &_playback {
+        grid-column: 2/4;
+        grid-row: 1/3;
+        position: relative;
+        background-position: center;
+        background-size: cover;
+
+      
+    }
+    
+}
+
+.liked {
+    filter: brightness(.6) saturate(.9)
+}
+
+
+.edit_song {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &-like {
+        cursor: pointer;
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    &-image {
+        background-color: $color-gray-dark;
+        font-size: 2rem;
+        padding: 1.5rem 3rem;
+        width: 80%;
+        text-align: center;
+        border: none;
+        color: $color-white;
+        margin-top: 2rem;
+        cursor: pointer;
+    }
+
+    &-delete {
+        background-color: $color-secondary;
+        font-size: 2rem;
+        width: 80%;
+        padding: 1rem 3rem;
+        border: none;
+        color: $color-white;
+        margin-top: 2rem;
+        cursor: pointer;
+    }
+}
+
+
+.author {
+
+
+    &_container {
+        width: 80%;
+        margin-top: 5rem;
+        padding: 2rem 5rem 2rem 2rem;
+        background-color: $color-gray-dark;
+        border-radius: .3rem;
+        position: relative;
+    }
+
+    &_image {
+
+        width: 15rem;
+        height: 15rem;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    &_heading {
+     
+        font-size: 2.5rem;
+    }
+
+    &_description {
+            margin-top: 2rem;
+            font-size: 2rem;
+        &-container {
+            position: absolute;
+            width: 50%;
+            top: 5rem;
+            margin-left: 17rem;
+            color: $color-white-soft;
+
+        }
+    }
+}
+
+
+
+

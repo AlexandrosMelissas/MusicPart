@@ -1,0 +1,367 @@
+.profile-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding-bottom: 2rem;
+    margin-top: 4rem;
+    position: relative;
+}
+.profile {
+    background-color: rgba($color-gray-dark,.9);
+    padding: 2rem 4rem;
+    color: $color-white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    &_container {
+        width: 80%;
+        margin-left: 4rem;
+
+    }
+
+    &_title {
+        display: inline-block;
+        font-size: 3rem;
+        color: $color-gray-dark;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid $color-gray-dark;
+    }
+
+    &_avatar {
+        height: 17rem;
+        border-radius: 50%;
+        object-fit: cover;
+        z-index: 9;
+
+        &-container {
+            position: relative;
+            border-radius: 50%;
+
+            &:hover .profile_avatar-btn {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            
+        &:hover .profile_avatar {
+            z-index: -1;
+        }
+        }
+
+        &-change {
+            display: none;
+        }
+
+        &-btn {
+            display: block;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 50%;
+            background-color: rgba($color-gray-dark,.2);
+            color: $color-white;
+            transform: translateX(50%);
+            @include text-shadow-large;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            cursor: pointer;
+            transition: all .3s;
+
+        }
+    }
+
+    &_btn {
+        display: block;
+        margin: 0 auto;
+        margin-top: 1rem;
+        width: 100%;
+        padding: 1.5rem 0;
+        background-color: $color-secondary;
+        border: none;
+        font-size: 2rem;
+        color: $color-white;
+        cursor: pointer;
+    }
+
+    &_info {
+        text-align: center;
+        margin-top: 2rem;
+        &-name {
+            font-size: 4rem;
+            margin-bottom: 3rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        &-type {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        &-text {
+            font-size: 2rem;
+            &:not(:last-child) {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+}
+
+
+
+.recipient {
+
+    &_info {
+        &-image {
+            width: 15rem;
+        }
+    }
+
+    &_name {
+        display: inline-block;
+        font-size: 2rem;
+        color: $color-gray-dark;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+    }
+
+    &_message {
+        height: 5rem;
+        width: 100%;
+        border-radius: .3rem;
+        border: 1px solid #666;
+        padding: 0 1rem;
+        align-self: center ;
+    }
+
+}
+
+.latest_songs {
+
+    &-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2rem;
+        margin-top: 2rem;
+        margin-right: 2rem;
+    }
+
+ 
+}
+
+.none {
+    font-size: 3rem;
+    color: $color-gray-dark;
+    text-align: left;
+    margin-top: 10rem;
+    padding-bottom: 5rem;
+}
+
+.instrument {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.song {
+    text-align: center;
+    // border: 1px solid $color-gray-dark;
+    border-radius: .6rem;
+    padding-bottom: 2rem;
+    @include box-shadow-medium;
+    cursor: pointer;
+    transition: all .3s;
+    
+    &:nth-child(n + 5) {
+        margin-top: 3rem;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    &_image {
+        max-width: 100%;
+        object-fit: cover;
+        border-top-left-radius: .3rem;
+        border-top-right-radius: .3rem;
+    }
+
+    &_title {
+        font-size: 2.5rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-weight: 100;
+        color: $color-gray-darker;
+    }
+
+    &_genre {
+        font-weight: 100;
+        color: $color-gray-dark;
+        font-size: 2rem;
+    }
+}
+
+.send_message {
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+
+
+    &-btn {
+        margin-top: 2rem;
+        padding: 1rem 4rem;
+        border-radius: .3rem;
+        background-color: $color-gray-dark;
+        color: white;
+        cursor: pointer;
+        border: none;
+        font-size: 2rem;
+        @include box-shadow-small;
+    }
+
+
+}
+
+
+.latest_comments {
+    grid-row: 2/2;
+    grid-column: 2/3;
+
+    &-container {
+        display: grid;
+        margin-right: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        row-gap: 2rem;
+        margin-top: 2rem;
+    }
+}
+
+.comment {
+    background-color: $color-gray-dark;
+    padding: 2rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &_title {
+        color: #222121;
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: $color-white;
+
+    }
+
+    &_song {
+        cursor: pointer;
+        color: $color-secondary;
+    }
+
+    &_text {
+        font-size: 1.7rem;
+        line-height: 2rem;
+        color: $color-white;
+    }
+}
+
+
+.update_profile {
+ 
+    &-heading {
+
+        font-size: 3rem;
+        color: $color-gray-dark;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    &-input {
+        font-size: 2rem;
+
+        &-add {
+            grid-column: 3/5;
+        }
+    }
+
+    &-group {
+        display: grid;
+        grid-template-columns: 2.5fr 6fr;
+        align-items: center;
+        gap: 1rem;
+
+        &-select {
+            grid-template-columns: 2.4fr 3fr 1fr 1fr;
+        }
+
+        &-add {
+            grid-template-columns: 1fr 1.3fr 1fr 2fr 2fr 1fr;
+        }
+    }
+
+    &-btn {
+        display: block;
+        padding: 1rem 2rem;
+        background-color: $color-gray-dark;
+        border: none;
+        color: $color-white;
+        border-radius: .3rem;
+        cursor: pointer;
+
+        &-gray {
+            background-color: $color-gray-dark;
+            grid-column: 5/6;
+        }
+
+        &-red {
+            background-color: $color-secondary;
+        }
+    }
+
+    &-save {
+       float: right;
+       margin-top: 4rem;
+       padding: 1rem 3rem;
+       font-size: 2rem;
+    }
+
+    &-label {
+        display: inline-block;
+        text-align:right;
+        font-size: 1.9rem;
+
+        &::after {
+            content: " :";
+        }
+    }
+
+    &-select {
+
+
+        &-container {
+            width: 100%;
+            position: relative;
+        }
+
+    }
+
+
+}
+
+
+.song {
+
+    &_image {
+        width: 100%;
+        height: 70%;
+    }
+}
