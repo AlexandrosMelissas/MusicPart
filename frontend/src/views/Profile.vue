@@ -40,7 +40,7 @@
         <h2 class="profile_title">Latest comments</h2>
         <div v-if="getProfile.owner && getProfile.owner.comments != 0"  class="latest_comments-container">
             <div v-for="comment in getProfile.owner.comments" :key="comment._id" class="comment">
-                <h2 class="comment_title">Commented on <span class="comment_song" v-bind:to="'/song/' + comment.song._id"> {{ comment.song.title }} </span> : </h2> 
+                <h2 class="comment_title">Commented on <router-link class="comment_song" v-bind:to="'/song/' + comment.song._id"> {{ comment.song.title }} </router-link> : </h2> 
                 <p class="comment_text">{{ comment.comment }}</p> 
             </div>
         </div>
