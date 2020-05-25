@@ -6,7 +6,7 @@ const Song = require('../models/song')
 
 
 router.post('/api/song/:id/like', auth, async (req,res) => {
-        const findLike = await Like.findOne({ owner : req.user._id})
+        const findLike = await Like.findOne({ owner : req.user._id, song: req.params.id})
 
         if(findLike) {
             return res.status(400).send({ error: 'You have already liked this song.'})
