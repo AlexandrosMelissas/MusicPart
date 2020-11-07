@@ -24,7 +24,7 @@ axios.interceptors.request.use((config) => {
 axios.interceptors.response.use(function (response) {
   setTimeout(() => {
     store.commit('setLoading',false)
-  },2000)
+  },500)
   return response;
 }, function (error) {
   store.commit('setLoading',false)

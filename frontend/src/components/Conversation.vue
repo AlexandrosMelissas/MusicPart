@@ -61,6 +61,7 @@ export default {
     },
     methods : {
         sendMessage() {
+          if(this.message)
             this.$store.dispatch('SEND_MESSAGE',{
               message: this.message,
               recipient: this.to

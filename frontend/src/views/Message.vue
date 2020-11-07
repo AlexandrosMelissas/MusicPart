@@ -3,8 +3,8 @@
         <div class="conversations">
             <div v-if="getMyProfile.owner">
                 <router-link active class="conversation" tag="div" v-for="conversation in getConversations" :key="conversation._id"  v-bind:to="'/message/conversation/' + conversation._id">
-                    <img class="conversation_img" v-bind:src="getMyProfile._id === conversation.sender.profile[0]._id ? $api + '/profile/' + conversation.recipient.profile[0]._id + '/avatar' : 'http://localhost:3000/api/profile/' + conversation.sender.profile[0]._id + '/avatar' ">
-                    <h2 class="conversation_name">{{getMyProfile._id === conversation.sender.profile[0]._id ? conversation.recipient.name : conversation.sender.profile[0].name }}</h2>
+                    <img class="conversation_img" v-bind:src="getMyProfile._id === conversation.sender.profile[0]._id ? $api + '/profile/' + conversation.recipient.profile[0]._id + '/avatar' : $api + '/profile/' + conversation.sender.profile[0]._id + '/avatar' ">
+                    <h2 class="conversation_name">{{getMyProfile._id === conversation.sender.profile[0]._id ? conversation.recipient.name : conversation.sender.name }}</h2>
                 </router-link>
             </div>       
     </div>

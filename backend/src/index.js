@@ -12,37 +12,38 @@ const conversationRouter = require('./routers/conversation')
 
 //Cors for localhost
 const cors = require('cors')
-const app = express()
 const history = require('connect-history-api-fallback')
 
 // Mongoose
 require('./db/mongoose')
-  
+const app = express()
+
+
 app.use(history({
     disableDotRule: true,
     verbose: true,
-    htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'] 
+    htmlAcceptHeaders: ['text/html', 'application/xhtml+xml']
 }))
 
-if(process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
     app.use(express.static(__dirname + '/../public/'))
 
-  
-    
-    app.get('/.*/', (req, res) => { 
-        res.sendFile(__dirname + '/../public/index.html'); 
+
+
+    app.get('/.*/', (req, res) => {
+        res.sendFile(__dirname + '/../public/index.html');
     });
 
 } else {
-    app.use(express.static(path.join(__dirname,'../frontend/public')))
-    app.get('/.*/', (req, res) => { 
-        res.sendFile(path.join(__dirname, '../frontend/public/index.html')); 
+    app.use(express.static(path.join(__dirname, '../frontend/public')))
+    app.get('/.*/', (req, res) => {
+        res.sendFile(path.join(__dirname, '../frontend/public/index.html'));
     });
-    
+
 
 }
 
-const port = process.env.PORT 
+const port = process.env.PORT
 
 app.use(cors())
 app.options('*', cors())

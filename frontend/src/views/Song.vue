@@ -74,7 +74,7 @@ export default {
       deleteTrack () {
           if(confirm('Are you sure?')){
               this.$store.dispatch('DELETE_SONG',this.$route.params.id).then((success) => {
-              this.$router.push('/home')
+              this.$router.push('/tracks')
          })
           }
          
